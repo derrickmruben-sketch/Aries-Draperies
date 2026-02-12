@@ -61,7 +61,7 @@ document.getElementById("bookingForm").addEventListener("submit", function(e){
   const formData = new FormData(this);
   const data = Object.fromEntries(formData.entries());
 
-  fetch("https://script.google.com/macros/s/AKfycbyXI501GbHNOSAlbF6qB3vpxLC7tlRYRx1QW7CGFoyqHtZODCBf_LEG6d2mgCEoX7uYUw/exec", {
+  fetch("https://script.google.com/macros/s/AKfycbz43CRvsxRI6tfsGLSHZB7yrR1q8VFsfSkRyRVqZVsvuY0dHxGMt6IXkBhVOZRTya01oQ/exec", {
     method: "POST",
     body: JSON.stringify(data)
   })
@@ -82,3 +82,4 @@ document.getElementById("bookingForm").addEventListener("submit", function(e){
 
 </body>
 </html>
+
