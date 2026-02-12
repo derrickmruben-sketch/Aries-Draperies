@@ -181,7 +181,7 @@ iframe {
 /* Luxury Brand Styling */
 .logo-luxury {
   font-family: 'Playfair Display', serif;
-  font-size: 2.5rem;
+  font-size: 2.75rem;
   font-weight: 700;
   color: #1a1a1a; /* Rich Charcoal */
   letter-spacing: 1px;
@@ -193,7 +193,7 @@ iframe {
 
 .logo-luxury span {
   font-family: 'Poppins', sans-serif;
-  font-size: 1.65rem;
+  font-size: 1.25rem;
   font-weight: 300;
   text-transform: uppercase;
   letter-spacing: 5px; /* Wide spacing*/
@@ -210,4 +210,5 @@ iframe {
 .logo-luxury:hover span {
   color: #a68a64; /* Darker gold on hover */
 }
+
 
