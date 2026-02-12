@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Book Appointment | Aries Draperies</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+<div class="container">
+<nav>
+<h2>Aries Draperies</h2>
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="about.html">About</a></li>
+<li><a href="gallery.html">Gallery</a></li>
+<li><a href="contact.html">Contact</a></li>
+<li><a href="booking.html">Booking</a></li>
+<li><a href="faq.html">FAQ</a></li>
+<li><a href="faq-espanol.html">FAQ Español</a></li>
+</ul>
+</nav>
+</div>
+</header>
+
+<section class="section">
+<div class="container">
+<h2>Schedule a Service Appointment</h2>
+
+<form id="bookingForm">
+<input type="text" name="name" placeholder="Full Name" required>
+<input type="tel" name="phone" placeholder="Phone Number" required>
+<input type="email" name="email" placeholder="Email Address" required>
+
+<select name="service" required>
+<option value="">Select Service</option>
+<option>Drapery Installation</option>
+<option>Drapery Repair</option>
+<option>Custom Draperies</option>
+<option>Consultation</option>
+</select>
+
+<input type="text" name="address" placeholder="Service Address" required>
+<input type="date" name="date" required>
+<input type="time" name="time" required>
+
+<textarea name="notes" placeholder="Additional Details"></textarea>
+
+<button type="submit">Book Appointment</button>
+</form>
+
+<p id="responseMessage" style="margin-top:20px;color:green;"></p>
+
+</div>
+</section>
+
+<script>
+document.getElementById("bookingForm").addEventListener("submit", function(e){
+  e.preventDefault();
+
+  const formData = new FormData(this);
+  const data = Object.fromEntries(formData.entries());
+
+  fetch("https://script.google.com/macros/s/AKfycbyXI501GbHNOSAlbF6qB3vpxLC7tlRYRx1QW7CGFoyqHtZODCBf_LEG6d2mgCEoX7uYUw/exec", {
+    method: "POST",
+    body: JSON.stringify(data)
+  })
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById("responseMessage").innerText = "Booking submitted successfully!";
+    document.getElementById("bookingForm").reset();
+  })
+  .catch(error => {
+    document.getElementById("responseMessage").innerText = "There was an error. Please try again.";
+  });
+});
+</script>
+
+<footer>
+<p>Aries Draperies | Paramount, CA</p>
+</footer>
+
+</body>
+</html>
